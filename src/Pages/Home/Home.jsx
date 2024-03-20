@@ -1,7 +1,11 @@
+import Banner from "../../Components/Banner/Banner";
+
 const Home = () => {
     return (
         <>
-            <h1 className="text-4xl font-semibold text-center">Hello World from Home Page</h1>
+            <section>
+                <Banner></Banner>
+            </section>
         </>
     );
 };
