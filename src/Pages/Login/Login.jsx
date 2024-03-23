@@ -93,6 +93,33 @@ const Login = () => {
 
 
 
+    const handleGGLLogin = () => {
+
+        GoogleLogin()
+
+            .then(res => {
+
+                if (res) {
+
+                    toast.success('Login successful! You now have access. 🎉😊', {
+
+                        position: "top-center"
+
+                    })
+
+                    navigate();
+
+                }
+
+            })
+
+            .catch(err => {
+
+                toast.error(err.message)
+
+            })
+
+    }
 
 
 
@@ -136,7 +163,7 @@ const Login = () => {
                                 <span className='font-medium text-gray-400 w-full text-center px-3 max-w-max'>or</span>
                                 <div className='border border-[#1BD15D] w-full'></div>
                             </div>
-                            <button className='flex items-center justify-center gap-3 border-[#1BD15D] border-2 py-2.5 w-full rounded-md '>
+                            <button onClick={handleGGLLogin} className='flex items-center justify-center gap-3 border-[#1BD15D] border-2 py-2.5 w-full rounded-md '>
                                 <FaGoogle className=" text-[#1BD15D] "></FaGoogle>
                                 <span className='font-bold text-[#1BD15D] '>GOOGLE</span>
                             </button>
