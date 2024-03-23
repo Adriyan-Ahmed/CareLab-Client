@@ -7,6 +7,7 @@ import { Link, NavLink } from "react-router-dom";
 
 
 
+
 const Navbar = () => {
 
 
@@ -14,6 +15,7 @@ const Navbar = () => {
     const Links = [
         <NavLink className={({ isActive }) => isActive ? ` bg-[#1BD15D] bg-opacity-10 lg:bg-transparent py-2.5 px-5 text-[#1BD15D] font-bold text-sm md:text-base rounded lg:rounded-none` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/" >HOME</NavLink>,
         <NavLink className={({ isActive }) => isActive ? ` bg-[#1BD15D] bg-opacity-10 lg:bg-transparent py-2.5 px-5 text-[#1BD15D] font-bold text-sm md:text-base rounded lg:rounded-none` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/services" >SERVICES</NavLink>,
+        <NavLink className={({ isActive }) => isActive ? ` bg-[#1BD15D] bg-opacity-10 lg:bg-transparent py-2.5 px-5 text-[#1BD15D] font-bold text-sm md:text-base rounded lg:rounded-none` : `bg-transparent py-2.5 px-5 font-bold text-sm md:text-base  rounded `} to="/dashboard" >DASHBOARD</NavLink>,
     ]
 
 

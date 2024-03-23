@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 
 const Dashboard = () => {
 
-    const [isClose, setIsClose] = useState(window.innerWidth < 768 ? true : false);
+    const [isClose, setIsClose] = useState(window.innerWidth < 1023 ? true : false);
 
     // const { User, LogOutAccount } = useContext(AuthContext);
 
@@ -34,7 +34,7 @@ const Dashboard = () => {
                     <div id="body" className="min-h-screen">
 
                         {/* Side Navbar's code start from here */}
-                        <nav id="sidebar" className={`fixed top-0 left-0 h-[100%] overflow-hidden duration-700 w-[250px] bg-white space-y-14 z-10 border-r-2 ${isClose ? 'w-[73px] ' : ''}`}>
+                        <nav id="sidebar" className={`fixed top-0 left-0 h-[100%] overflow-hidden duration-700 w-[250px] bg-white space-y-[35px] z-10 border-r-2 ${isClose ? 'w-[73px] ' : ''}`}>
                             <div className="flex items-center gap-3 pl-6 pt-8">
                                 <img className=" h-8" src="https://i.ibb.co/yNwX2Qj/Care-Lab-Logo-removebg-preview.png" alt="LOGO" />
                                 <h1 id="linkName" className={`text-sm md:text-lg lg:text-lg xl:text-xl font-bold duration-700 ${isClose ? 'scale-0 w-0 pointer-events-none' : ''}`}>CareLab</h1>
@@ -63,7 +63,7 @@ const Dashboard = () => {
                                 <div className=" relative max-w-[600px] w-full">
                                     <div className="relative max-w-[600px] w-full ">
                                         <div className="bg-white rounded-md">
-                                            <input className="bg-[#F9FAFB] font-medium p-5 w-full rounded-md outline-none " type="text" placeholder="What you Search?" required />
+                                            <input className="bg-[#F9FAFB] font-medium p-5 w-full rounded-md outline-none border border-[#1BD15D] " type="text" placeholder="What you Search?" required />
                                         </div>
                                         <span className="absolute top-[9px] right-2.5">
                                             <button className=" p-3.5 border hover:bg-[#1BD15D] border-[#1BD15D] text-[#1BD15D] hover:text-white focus:text-white  focus:bg-[#1BD15D] duration-500 text-base rounded"><IoIosSearch></IoIosSearch></button>
