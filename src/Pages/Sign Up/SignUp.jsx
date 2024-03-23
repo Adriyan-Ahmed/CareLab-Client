@@ -10,7 +10,7 @@ const SignUp = () => {
                             </div>
                             <div className="mx-auto space-y-3">
                                 <h1 className=" text-2xl font-semibold text-center tracking-wider ">Join with us today</h1>
-                                <p className="mx-auto text-gray-500 tracking-widest text-center  ">Enter you email and password to sign in you account</p>
+                                <p className="mx-auto text-gray-500 tracking-widest text-center  ">Enter you email and password to sign up you account</p>
                             </div>
                         </div>
                         <div className="space-y-9">
