@@ -1,6 +1,8 @@
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../Contexts/Authentication/Authentication";
+import { useContext } from "react";
 
 const Login = () => {
 
