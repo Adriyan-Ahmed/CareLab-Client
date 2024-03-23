@@ -1,7 +1,101 @@
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
+
+
+
+    const { LoginAccount, GoogleLogin } = useContext(AuthContext);
+
+
+
+
+    const Location = useLocation();
+
+
+
+
+    const navigation = useNavigate();
+
+
+
+
+    const navigate = () => {
+
+        console.log(Location.state);
+
+        navigation(Location?.state ? Location.state : "/")
+
+    }
+
+
+
+
+    const handleLogin = e => {
+
+        e.preventDefault()
+
+        const form = e.target;
+
+        const email = form.email.value;
+
+        const pass = form.password.value;
+
+
+
+
+        LoginAccount(email, pass)
+
+            .then(res => {
+
+                if (res) {
+
+                    toast.success('Login successful! You now have access. 🎉😊', {
+
+                        position: "top-center"
+
+                    })
+
+                    form.reset();
+
+                    navigate();
+
+                }
+
+            })
+
+
+
+
+            .catch(err => {
+
+                if (err.message == 'Firebase: Error (auth/network-request-failed).') {
+
+                    toast.error('Your Network Connection is Too Slow!')
+
+                }
+
+                else {
+
+                    toast.error(err.message, {
+
+                        position: "top-center"
+
+                    })
+
+                }
+
+            })
+    }
+
+
+
+
+
+
+
+
 
 
     return (
@@ -19,7 +113,7 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="space-y-9">
-                            <form className='space-y-5'>
+                            <form onSubmit={handleLogin} className='space-y-5'>
                                 <div className='space-y-3'>
                                     <h6 className='font-bold pl-1'>E-mail Address</h6>
                                     <div className="relative input-box">
