@@ -1,4 +1,97 @@
 const SignUp = () => {
+
+
+
+    const { CreateAccount, updatingProfile, GoogleLogin } = useContext(AuthContext);
+
+
+
+
+    const Location = useLocation();
+
+
+
+
+    const navigation = useNavigate();
+
+
+
+
+    const navigate = () => {
+
+        console.log(Location.state);
+
+        navigation(Location?.state ? Location.state : "/")
+
+    }
+
+
+
+
+    const handleRegister = e => {
+
+        e.preventDefault()
+
+        const form = e.target;
+
+        const email = form.email.value;
+
+        const pass = form.password.value;
+
+        const photo = form.photo.value;
+
+        const name = form.name.value;
+
+        const user = { name, photo, email, pass };
+
+
+
+        CreateAccount(email, pass)
+
+            .then(res => {
+
+                if (res.user.email) {
+
+                    updatingProfile(res, name, photo)
+
+                    toast.success('Congratulations ! Registration completed Successfully ! 🤩💕')
+
+                    saveUserInfo(name, photo, email, pass)
+
+                    form.reset();
+
+                    navigate();
+
+                }
+
+            })
+
+
+            .catch(err => {
+
+                if (err.message == "Firebase: Error (auth/email-already-in-use).") {
+
+                    toast.error("The Email already in use")
+
+                }
+
+                else {
+
+                    toast.error(err.message);
+
+                }
+
+            })
+
+    }
+
+
+
+
+
+
+
+
     return (
         <>
             <div className="container mx-auto">
@@ -14,7 +107,19 @@ const SignUp = () => {
                             </div>
                         </div>
                         <div className="space-y-9">
-                            <form className='space-y-5'>
+                            <form onSubmit={handleRegister} className='space-y-5'>
+                                <div className='space-y-3'>
+                                    <h6 className='font-bold pl-1'>Full Name</h6>
+                                    <div className="relative input-box">
+                                        <input className="border border-[#1BD15D] w-full py-2.5 rounded-md px-5 outline-none" type="text" name="name" placeholder="Enter Your Email" required />
+                                    </div>
+                                </div>
+                                <div className='space-y-3'>
+                                    <h6 className='font-bold pl-1'>Photo URL</h6>
+                                    <div className="relative input-box">
+                                        <input className="border border-[#1BD15D] w-full py-2.5 rounded-md px-5 outline-none" type="text" name="photo" placeholder="Enter Your Email" required />
+                                    </div>
+                                </div>
                                 <div className='space-y-3'>
                                     <h6 className='font-bold pl-1'>E-mail Address</h6>
                                     <div className="relative input-box">
