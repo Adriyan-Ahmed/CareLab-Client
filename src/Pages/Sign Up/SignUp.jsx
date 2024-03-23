@@ -62,7 +62,7 @@ const SignUp = () => {
 
                     toast.success('Congratulations ! Registration completed Successfully ! 🤩💕')
 
-                    saveUserInfo(name, photo, email, pass)
+                    // saveUserInfo(name, photo, email, pass)
 
                     form.reset();
 
