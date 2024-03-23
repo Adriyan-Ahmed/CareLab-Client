@@ -1,4 +1,5 @@
 import { FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -34,6 +35,7 @@ const Login = () => {
                                 <div>
                                     <button className="bg-[#1BD15D] py-3 md:py-3 w-full text-white font-bold  rounded">LOGIN</button>
                                 </div>
+                                <p className='font-medium text-gray-400'>Doesn't have an account yet?<Link className='text-[#1BD15D] font-semibold underline' to="/sign-up">Sign up</Link> </p>
                             </form>
                             <div className='flex items-center'>
                                 <div className='border border-[#1BD15D] w-full'></div>

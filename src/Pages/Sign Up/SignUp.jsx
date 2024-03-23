@@ -1,3 +1,9 @@
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Contexts/Authentication/Authentication";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
+
 const SignUp = () => {
 
 
@@ -161,8 +167,9 @@ const SignUp = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <button className="bg-[#1BD15D] py-3 md:py-3 w-full text-white font-bold  rounded">LOGIN</button>
+                                    <button className="bg-[#1BD15D] py-3 md:py-3 w-full text-white font-bold  rounded">SIGN UP</button>
                                 </div>
+                                <p className='font-medium text-gray-400'>Have an account in the website ? <Link className='text-[#1BD15D] font-semibold underline' to="/login">Sign in</Link> </p>
                             </form>
                             <div className='flex items-center'>
                                 <div className='border border-[#1BD15D] w-full'></div>
